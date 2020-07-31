@@ -1,0 +1,8 @@
+base structure of website, with homepage, dictionary, and quiz pages. can navigate to all quiz types (multiple choice, text, sentence comparison)
+	-quizes currently run using local database, need to update them to work with hosted database
+	-need to update / add sounds files for correct/incorrect pronunciations + sentences
+
+	-css can be improved upon, add variations for different pages
+	-can add a header to each page to make for easy direction through site
+
+place folder in xampp/htdocs to work.
