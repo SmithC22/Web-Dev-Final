@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>Quiz</title>
+		<script type="text/javascript" src="quiz.js"></script>
+	</head>
+		<body>
+			<audio id="player1" autoplay>
+				<source src="./../audio/note.mp3" type="audio/mpeg" id="m">
+				Your browser does not support the audio element.
+				</audio>
+			<audio id="player2" autoplay>
+				<source src="./../audio/feather.mp3" type="audio/mpeg" id="m">
+				Your browser does not support the audio element.
+				</audio>
+			<audio id="player3" autoplay>
+				<source src="./../audio/honeycomb.mp3" type="audio/mpeg" id="m">
+				Your browser does not support the audio element.
+				</audio>
+			<div> 
+				<button onclick="document.getElementById('player1').play()">A</button>
+				<button onclick="document.getElementById('player2').play()">B</button>
+				<button onclick="document.getElementById('player3').play()">C</button>
+			</div>
+			<form method="post" action="" id="quiz">
+				<fieldset>
+					<legend>Quiz</legend>
+		
+					<p>
+						<label>What sound is this?</label><br/>	
+					</p>
+		
+					<p>
+						<input type="text" name="ans" size="80" />
+					</p>
+				
+					<div class="rectangle centered"> 
+						<input type="submit" class="rounded">  
+					</div>
+			
+				</fieldset>
+			</form>
+		</body>
+</html>
