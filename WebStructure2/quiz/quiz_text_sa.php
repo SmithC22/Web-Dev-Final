@@ -1,27 +1,9 @@
 <?php
 	require_once('./../dictionary/config.php');
 	
-	try {
-		$connString = "mysql:host=" . DBHOST . ";dbname=" . DBNAME;
-		$user = DBUSER;
-		$pass = DBPASS;
-		
-		$pdo = new PDO($connString, $user, $pass);
+	$result = file_get_contents(API_URL.GET_SAMPLE_BY_QUESTION_TYPE."syllable_ambiguity");    
+	$result = json_decode($result)[0];
 
-		
-		$sql = "SELECT * FROM dictionary
-				WHERE `QuestionType` = \"Syllable Ambiguity\"
-				ORDER BY RAND()
-				LIMIT 1;";
-
-		$result = $pdo->query($sql);
-		
-		$row = $result->fetch();
-		
-		$num = rand(1,2);
-		
-		$rand = "Correct" . $num;
-		
 	echo "<html>
 			<head>
 				<title class=\"SA\">Quiz</title>

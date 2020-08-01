@@ -1,23 +1,9 @@
 <?php
 	require_once('./../dictionary/config.php');
+
+	$result = file_get_contents(API_URL.GET_SAMPLE_BY_QUESTION_TYPE."syllable_ambiguity");    
+	$result = json_decode($result)[0];
 	
-	try {
-		$connString = "mysql:host=" . DBHOST . ";dbname=" . DBNAME;
-		$user = DBUSER;
-		$pass = DBPASS;
-		
-		$pdo = new PDO($connString, $user, $pass);
-
-		
-		$sql = "SELECT * FROM dictionary
-				WHERE `QuestionType` = \"Syllable Ambiguity\"
-				ORDER BY RAND()
-				LIMIT 1;";
-
-		$result = $pdo->query($sql);
-		
-		$row = $result->fetch();
-		
 	echo "<html>
 			<head>
 				<title class=\"SA\">Quiz</title>
@@ -26,12 +12,12 @@
 			</head>
 				<body>
 				
-				<audio id=\"player1\" class=\"" . $row['Word'] . "\">
-					<source src=" . $row['Sentence1'] . " type=\"audio/mpeg\">
+				<audio id=\"player1\" class=\"" . $result->{"word"} . "\">
+					<source src=" . $result->{"sentence1"}  . " type=\"audio/mpeg\">
 					Your browser does not support the audio element.
 				</audio>
-				<audio id=\"player2\" class=\"" . $row['Word'] . "\">
-					<source src=" . $row['Sentence2'] . " type=\"audio/mpeg\">
+				<audio id=\"player2\" class=\"" . $result->{"word"}  . "\">
+					<source src=" . $result->{"sentence2"}  . " type=\"audio/mpeg\">
 					Your browser does not support the audio element.
 				</audio>
 				
@@ -40,7 +26,7 @@
 					<legend>Quiz</legend>
 		
 					<p>
-						<h1>? " . $row['Word'] . "<img id=\"a\" src=\"audio.png\" class=\"2\" onclick=\"play('player1')\">
+						<h1>? " . $result->{"word"}  . "<img id=\"a\" src=\"audio.png\" class=\"2\" onclick=\"play('player1')\">
 													<img id=\"a\" src=\"audio.png\" class=\"2\" onclick=\"play('player2')\"></h1>
 						<label>What is the common word between these sentences?</label><br/>	
 					</p>
@@ -63,12 +49,4 @@
 				}
 			</script>
 		</html>";
-		
-		$pdo = null;
-
-	}catch(PDOException $e) {
-		print "Error!: " . $e->getMessage() . "<br/>";
-		die();
-	}
-
 ?>

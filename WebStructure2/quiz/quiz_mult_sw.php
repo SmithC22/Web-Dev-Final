@@ -1,23 +1,9 @@
 <?php
 	require_once('./../dictionary/config.php');
 	
-	try {
-		$connString = "mysql:host=" . DBHOST . ";dbname=" . DBNAME;
-		$user = DBUSER;
-		$pass = DBPASS;
-		
-		$pdo = new PDO($connString, $user, $pass);
-
-		
-		$sql = "SELECT * FROM dictionary
-				WHERE `QuestionType` = \"Speech vs Writing\"
-				ORDER BY RAND()
-				LIMIT 1;";
-
-		$result = $pdo->query($sql);
-		
-		$row = $result->fetch();
-		
+	$result = file_get_contents(API_URL.GET_SAMPLE_BY_QUESTION_TYPE."speech_vs_writing");    
+	$result = json_decode($result)[0];
+	
 	echo "<html>
 			<head>
 				<title class=\"SW\">Quiz</title>
@@ -27,15 +13,15 @@
 				<body>
 				
 				<audio id=\"player1\">
-					<source src=" . $row['Wrong1'] . " type=\"audio/mpeg\">
+					<source src=" . $result -> {'wrong'} . " type=\"audio/mpeg\">
 					Your browser does not support the audio element.
 				</audio>
 				<audio id=\"player2\">
-					<source src=" . $row['Wrong2'] . " type=\"audio/mpeg\">
+					<source src=" . $result -> {'correct1'} . " type=\"audio/mpeg\">
 					Your browser does not support the audio element.
 				</audio>
 				<audio id=\"player3\">
-					<source src=" . $row['Correct1'] . " type=\"audio/mpeg\">
+					<source src=" . $result -> {'correct2'} . " type=\"audio/mpeg\">
 					Your browser does not support the audio element.
 				</audio>
 				
@@ -44,7 +30,7 @@
 					<legend>Quiz</legend>
 		
 					<p>
-						<h1>" . $row['Word'] . "</h1>
+						<h1>" . $result -> {'word'} . "</h1>
 						<label>Which pronunciation is correct?</label><br/>	
 					</p>
 		
@@ -86,12 +72,4 @@
 					document.getElementById(\"b3\").setAttribute( \"onClick\", \"play('player'+z)\" );
 			</script>
 		</html>";
-		
-		$pdo = null;
-
-	}catch(PDOException $e) {
-		print "Error!: " . $e->getMessage() . "<br/>";
-		die();
-	}
-
 ?>
