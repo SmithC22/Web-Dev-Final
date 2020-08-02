@@ -22,7 +22,7 @@
 					<legend>Quiz</legend>
 		
 					<p>
-						<h1>? " . $result->{"word"} . "<img id=\"a\" src=\"audio.png\" class=\"3\" onclick=\"play('player1')\"></h1>
+						<img id=\"a\" src=\"audio.png\" class=\"3\" onclick=\"play('player1')\">
 						<label>What word do you hear?</label><br/>	
 					</p>
 		

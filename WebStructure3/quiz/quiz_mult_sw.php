@@ -30,7 +30,6 @@
 					<legend>Quiz</legend>
 		
 					<p>
-						<h1>" . $result->{"word"} . "</h1>
 						<label>Which pronunciation is correct?</label><br/>	
 					</p>
 		

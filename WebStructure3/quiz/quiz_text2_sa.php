@@ -26,8 +26,8 @@
 					<legend>Quiz</legend>
 		
 					<p>
-						<h1>? " . $result->{"word"}  . "<img id=\"a\" src=\"audio.png\" class=\"2\" onclick=\"play('player1')\">
-													<img id=\"a\" src=\"audio.png\" class=\"2\" onclick=\"play('player2')\"></h1>
+						<img id=\"a\" src=\"audio.png\" class=\"2\" onclick=\"play('player1')\">
+													<img id=\"a\" src=\"audio.png\" class=\"2\" onclick=\"play('player2')\">
 						<label>What is the common word between these sentences?</label><br/>	
 					</p>
 		
