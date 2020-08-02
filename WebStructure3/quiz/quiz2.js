@@ -2,6 +2,7 @@ window.onload = function() {
 	
 	var loc = window.location.pathname;
 	var dir = loc.substring(0, loc.lastIndexOf('/'));
+	var base = window.location.href.substring(0, window.location.href.indexOf("/", 10))
 
 	document.getElementById("quiz").onsubmit = function(e) {
 		
@@ -39,13 +40,12 @@ window.onload = function() {
 						} else {
 							q = "text";
 						}
-						
 						if (t == true && ans[i].value == 3) {												//sends user to new quiz based if selects yes
-							window.location.replace("http://localhost:8080"+dir+"/quiz_"+q+"_ad.php");
+							window.location.replace(base+dir+"/quiz_"+q+"_ad.php");
 						} else if (t == true && ans[i].value == 6) {
-							window.location.replace("http://localhost:8080"+dir+"/quiz_"+q+"_sa.php");
+							window.location.replace(base+dir+"/quiz_"+q+"_sa.php");
 						} else if (t == true && ans[i].value == 9) {
-							window.location.replace("http://localhost:8080"+dir+"/quiz_"+q+"_sw.php");
+							window.location.replace(base+dir+"/quiz_"+q+"_sw.php");
 						} else {
 							window.location.replace("./../home.html");														//sends user home if selects no
 						}
@@ -79,11 +79,11 @@ window.onload = function() {
 						}
 
 						if (t == true && document.getElementsByTagName("img")[0].className == "1") {			//sends user to new quiz based if selects yes
-							window.location.replace("http://localhost:8080"+dir+"/quiz_"+q+"_ad.php");
+							window.location.replace(base+dir+"/quiz_"+q+"_ad.php");
 						} else if (t == true && document.getElementsByTagName("img")[0].className == "2") {
-							window.location.replace("http://localhost:8080"+dir+"/quiz_"+q+"_sa.php");
+							window.location.replace(base+dir+"/quiz_"+q+"_sa.php");
 						} else if (t == true && document.getElementsByTagName("img")[0].className == "3") {
-							window.location.replace("http://localhost:8080"+dir+"/quiz_"+q+"_sw.php");
+							window.location.replace(base+dir+"/quiz_"+q+"_sw.php");
 						} else{
 							window.location.replace("./../home.html");														//sends user home if selects no
 						}
