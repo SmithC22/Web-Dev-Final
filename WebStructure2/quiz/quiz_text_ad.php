@@ -1,27 +1,9 @@
 <?php
 	require_once('./../dictionary/config.php');
-	
-	try {
-		$connString = "mysql:host=" . DBHOST . ";dbname=" . DBNAME;
-		$user = DBUSER;
-		$pass = DBPASS;
 		
-		$pdo = new PDO($connString, $user, $pass);
+	$result = file_get_contents(API_URL.GET_SAMPLE_BY_QUESTION_TYPE."accents_dialects");    
+	$result = json_decode($result)[0];
 
-		
-		$sql = "SELECT * FROM dictionary
-				WHERE `QuestionType` = \"Accents & Dialect\"
-				ORDER BY RAND()
-				LIMIT 1;";
-
-		$result = $pdo->query($sql);
-		
-		$row = $result->fetch();
-		
-		$num = rand(1,2);
-		
-		$rand = "Correct" . $num;
-		
 	echo "<html>
 			<head>
 				<title class=\"AD\">Quiz</title>
@@ -30,8 +12,8 @@
 			</head>
 				<body>
 				
-				<audio id=\"player1\" class=\"" . $row['Word'] . "\" autoplay>
-					<source src=" . $row[$rand] . " type=\"audio/mpeg\">
+				<audio id=\"player1\" class=\"" . $result->{"word"} . "\" autoplay>
+					<source src=" . $result->{"correct1"} . " type=\"audio/mpeg\">
 					Your browser does not support the audio element.
 				</audio>
 				
@@ -40,7 +22,7 @@
 					<legend>Quiz</legend>
 		
 					<p>
-						<h1>? " . $row['Word'] . "<img id=\"a\" src=\"audio.png\" class=\"1\" onclick=\"play('player1')\"></h1>
+						<h1>? " . $result->{"word"} . "<img id=\"a\" src=\"audio.png\" class=\"1\" onclick=\"play('player1')\"></h1>
 						<label>What word do you hear?</label><br/>	
 					</p>
 		
@@ -62,12 +44,5 @@
 				}
 			</script>
 		</html>";
-		
-		$pdo = null;
-
-	}catch(PDOException $e) {
-		print "Error!: " . $e->getMessage() . "<br/>";
-		die();
-	}
 
 ?>

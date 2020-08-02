@@ -12,8 +12,8 @@
 			</head>
 				<body>
 				
-				<audio id=\"player1\" class=\"" . $row['Word'] . "\" autoplay>
-					<source src=" . $row[$rand] . " type=\"audio/mpeg\">
+				<audio id=\"player1\" class=\"" . $result->{"word"}. "\" autoplay>
+					<source src=" . $result->{"correct1"} . " type=\"audio/mpeg\">
 					Your browser does not support the audio element.
 				</audio>
 				
@@ -22,7 +22,7 @@
 					<legend>Quiz</legend>
 		
 					<p>
-						<h1>? " . $row['Word'] . "<img id=\"a\" src=\"audio.png\" class=\"2\" onclick=\"play('player1')\"></h1>
+						<h1>? " . $result->{"word"} . "<img id=\"a\" src=\"audio.png\" class=\"2\" onclick=\"play('player1')\"></h1>
 						<label>What word do you hear?</label><br/>	
 					</p>
 		
@@ -44,12 +44,5 @@
 				}
 			</script>
 		</html>";
-		
-		$pdo = null;
-
-	}catch(PDOException $e) {
-		print "Error!: " . $e->getMessage() . "<br/>";
-		die();
-	}
 
 ?>
