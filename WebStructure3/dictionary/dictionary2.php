@@ -16,10 +16,19 @@
 	echo "<tr><th> ID </th><th onclick=\"sortTable(1)\"> Word <img src=\"arrow1.png\"></th><th> Pronunciation 1 </th><th> Pronunciation 2 </th><th> Sentence </th><th onclick=\"sortTable(5)\"> Attribute <img src=\"arrow1.png\"></th></tr>";
 	for($idx=0;$idx < count($result);$idx++) {
 		$row = $result[$idx];
+		
+		if ($row->{'question_type'} == "accents_dialects") {
+			$qt = "Accents & Dialect";
+		} else if ($row->{'question_type'} == "syllable_ambiguity") {
+			$qt = "Syllable Ambiguity"; 
+		} else if ($row->{'question_type'} == "speech_vs_writing") {
+			$qt = "Speech vs Writing"; 
+		}
+		
 		if ($row -> {'correct2'} != "-") {
 			echo "<tr><td>" . $row->{"id"} . "</td><td>" . $row->{"word"} . "</td><td> 
 													<audio id=" . $row->{"word"} . ">
-													<source src=" . $row->{"correct1"} . " type=\"audio/mpeg\">
+													<source src=./../audio/" . $row->{"correct1"} . ".mp3 type=\"audio/mpeg\">
 														Your browser does not support the audio element.
 													</audio>
 													<div> 
@@ -27,23 +36,23 @@
 													</div> </td><td> 
 												
 													<audio id=" . $row->{"word"} . "1>
-													<source src=" . $row->{"correct2"} . " type=\"audio/mpeg\">
+													<source src=./../audio/" . $row->{"correct2"} . ".mp3 type=\"audio/mpeg\">
 														Your browser does not support the audio element.
 													</audio>
 													<div> 
 														<button onclick=\"document.getElementById('" . $row->{"word"} . "1').play()\">Play Sound</button>
 													</div>
-				</td><td>" .$row->{"sentence"} . "</td><td>" . $row->{"question_type"} . "</td></tr>";
+				</td><td>" .$row->{"sentence"} . "</td><td>" . $qt . "</td></tr>";
 		} else {
 			echo "<tr><td>" . $row->{"id"} . "</td><td>" . $row->{"word"} . "</td><td> 
 													<audio id=" . $row->{"word"} . ">
-													<source src=" . $row->{"correct1"} . " type=\"audio/mpeg\">
+													<source src=./../audio/" . $row->{"correct1"} . ".mp3 type=\"audio/mpeg\">
 														Your browser does not support the audio element.
 													</audio>
 													<div> 
 														<button onclick=\"document.getElementById('" . $row->{"word"}  . "').play()\">Play Sound</button>
 													</div> </td><td>" . $row->{"correct2"} . "</td>
-													<td>" . $row->{"sentence"}  . "</td><td>" . $row->{"question_type"}  . "</td></tr>";
+													<td>" . $row->{"sentence"}  . "</td><td>" . $qt  . "</td></tr>";
 		}
 	}
 	echo "</table>";

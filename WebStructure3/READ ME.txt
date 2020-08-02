@@ -1,8 +1,12 @@
 base structure of website, with homepage, dictionary, and quiz pages. can navigate to all quiz types (multiple choice, text, sentence comparison)
 	-quizes running with hosted database
 	-dummy files are currently used for audio files, need to update files for correct/incorrect pronunciations + sentences
+	-dictionary updated with host db
 
+TO DO:
 	-css can be improved upon, add variations for different pages
 	-can add a header to each page to make for easy direction through site
+	-create more words/sound files for current words
+	-work on presentation / report
 
 place folder in xampp/htdocs to work.
