@@ -12,11 +12,11 @@
 			</head>
 				<body>
 				    <div class=\"navBar\">
-                	    | <a href=\"./../home.html\">Home</a>
-                	    | <a href=\"./../quiz/quiz_mult_ad.php\">Differences in Accents & Dialect</a>
-                	    | <a href=\"./../quiz/quiz_text_sa.php\">Syllable Ambiguity in Words</a>
+                        <a href=\"./../home.html\">Home</a>
+                        | <a href=\"./../quiz/quiz_mult_ad.php\">Differences in Accents & Dialect</a>
+                        | <a href=\"./../quiz/quiz_text_sa.php\">Syllable Ambiguity in Words</a>
                         | <a href=\"./../quiz/quiz_mult_sw.php\">Comparing Spoken & Written Words</a>
-                        | <a href=\"./../dictionary/dictionary2.php\">Dictionary</a> |
+                        | <a href=\"./../dictionary/dictionary2.php\">Dictionary</a>
                         <hr>
                     </div>
 				
@@ -49,8 +49,8 @@
                         </div>
 					</p>
 				
-					<div class=\"rectangle centered\"> 
-						<input type=\"submit\" class=\"rounded\">  
+					<div >
+						<input type=\"submit\">
 					</div>
 			
 				</fieldset>
