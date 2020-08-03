@@ -1,0 +1,9 @@
+final structure of website, with homepage, dictionary, and quiz pages. can navigate to all quiz types (multiple choice, text, sentence comparison)
+	-quizes running with hosted database
+	-all files have proper voice lines [except caramel sentence2 and queue wrong2]
+	-dictionary updated with host db
+
+TO DO:
+	-work on presentation / report
+
+place folder in xampp/htdocs to work.
