@@ -11,6 +11,14 @@
 				<link href=\"./../main.css\" type=\"text/css\" rel=\"stylesheet\">
 			</head>
 				<body>
+				<div class=\"navBar\">
+                    | <a href=\"./../home.html\">Home</a>
+                    | <a href=\"./../quiz/quiz_mult_ad.php\">Differences in Accents & Dialect</a>
+                    | <a href=\"./../quiz/quiz_text_sa.php\">Syllable Ambiguity in Words</a>
+                    | <a href=\"./../quiz/quiz_mult_sw.php\">Comparing Spoken & Written Words</a>
+                    | <a href=\"./../dictionary/dictionary2.php\">Dictionary</a> |
+                    <hr>
+                </div>
 				
 				<audio id=\"player1\" class=\"" . $result->{"word"} . "\" autoplay>
 					<source src=./../audio/" . $result->{"correct1"} . ".mp3 type=\"audio/mpeg\">

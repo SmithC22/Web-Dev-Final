@@ -11,8 +11,16 @@
 			</head>
 
 			<body>
+                    <div class=\"navBar\">
+                	    | <a href=\"./../home.html\">Home</a>
+                	    | <a href=\"./../quiz/quiz_mult_ad.php\">Differences in Accents & Dialect</a>
+                	    | <a href=\"./../quiz/quiz_text_sa.php\">Syllable Ambiguity in Words</a>
+                        | <a href=\"./../quiz/quiz_mult_sw.php\">Comparing Spoken & Written Words</a>
+                        | <a href=\"./../dictionary/dictionary2.php\">Dictionary</a> |
+                    </div>
+
 				<h1>Dictionary</h1>";
-	echo "<table id='dictionary' border='1'>";
+	echo "<table id='dictionary' border='1' class='dictionary'>";
 	echo "<tr><th> ID </th><th onclick=\"sortTable(1)\"> Word <img src=\"arrow1.png\"></th><th> Pronunciation 1 </th><th> Pronunciation 2 </th><th> Sentence </th><th onclick=\"sortTable(5)\"> Attribute <img src=\"arrow1.png\"></th></tr>";
 	for($idx=0;$idx < count($result);$idx++) {
 		$row = $result[$idx];
@@ -56,8 +64,7 @@
 		}
 	}
 	echo "</table>";
-	echo "<li><a href=\"./../home.html\">Home</a></li></br>
-<script>
+echo "<script>
 function sortTable(n) {
 var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
 table = document.getElementById(\"dictionary\");

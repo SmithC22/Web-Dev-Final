@@ -1,3 +1,3 @@
-caleb - web structure, homepage html, quiz format and funtionality, dictionary.php
+caleb - web structure, homepage html, quiz format and functionality, dictionary.php
 jackson - database creation, quiz and dictionary integration with database
-noah - base css
+noah - home page, CSS and navigation

@@ -11,6 +11,14 @@
 				<link href=\"./../main.css\" type=\"text/css\" rel=\"stylesheet\">
 			</head>
 				<body>
+				<div class=\"navBar\">
+                    | <a href=\"./../home.html\">Home</a>
+                    | <a href=\"./../quiz/quiz_mult_ad.php\">Differences in Accents & Dialect</a>
+                    | <a href=\"./../quiz/quiz_text_sa.php\">Syllable Ambiguity in Words</a>
+                    | <a href=\"./../quiz/quiz_mult_sw.php\">Comparing Spoken & Written Words</a>
+                    | <a href=\"./../dictionary/dictionary2.php\">Dictionary</a> |
+                    <hr>
+                </div>
 				
 				<audio id=\"player1\">
 					<source src=./../audio/" . $result->{"wrong"} . ".mp3 type=\"audio/mpeg\">
@@ -34,9 +42,13 @@
 					</p>
 		
 					<p>
-						<input type=\"radio\" id=\"b1\" name=\"ans\" value=\"0\" onclick=\"play('player1')\">A<br/>
-						<input type=\"radio\" id=\"b2\" name=\"ans\" value=\"0\" onclick=\"play('player2')\">B<br/>
-						<input type=\"radio\" id=\"b3\" name=\"ans\" value=\"0\" onclick=\"play('player3')\">C<br/>
+					    <div class=\"MultiChoice\">
+						    <label><input type=\"radio\" id=\"b1\" name=\"ans\" value=\"0\" onclick=\"play('player1')\">A</label>
+						    <input type=\"radio\" id=\"b2\" name=\"ans\" value=\"0\" onclick=\"play('player2')\" value=\"B\">
+						    <label for=\"B\">B</label>
+						    <input type=\"radio\" id=\"b3\" name=\"ans\" value=\"0\" onclick=\"play('player3')\" value=\"C\">
+						    <label for=\"C\">C</label>
+						</div>
 					</p>
 				
 					<div class=\"rectangle centered\"> 
