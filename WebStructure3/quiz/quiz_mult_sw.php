@@ -44,10 +44,8 @@
 					<p>
 					    <div class=\"MultiChoice\">
 						    <label><input type=\"radio\" id=\"b1\" name=\"ans\" value=\"0\" onclick=\"play('player1')\">A</label>
-						    <input type=\"radio\" id=\"b2\" name=\"ans\" value=\"0\" onclick=\"play('player2')\" value=\"B\">
-						    <label for=\"B\">B</label>
-						    <input type=\"radio\" id=\"b3\" name=\"ans\" value=\"0\" onclick=\"play('player3')\" value=\"C\">
-						    <label for=\"C\">C</label>
+						    <label><input type=\"radio\" id=\"b2\" name=\"ans\" value=\"0\" onclick=\"play('player2')\">B</label>
+						    <label><input type=\"radio\" id=\"b3\" name=\"ans\" value=\"0\" onclick=\"play('player3')\">C</label>
 						</div>
 					</p>
 				
