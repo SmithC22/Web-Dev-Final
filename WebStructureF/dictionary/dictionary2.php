@@ -22,7 +22,7 @@
 
 				<h1>Dictionary</h1>";
 	echo "<table id='dictionary' border='1' class='dictionary'>";
-	echo "<tr><th onclick=\"sortTable(0)\" class=\"click\"> Word <img src=\"arrow1.png\" class=\"click\"></th><th> Pronunciation 1 </th><th> Pronunciation 2 </th><th> Sentence </th><th onclick=\"sortTable(4)\" class=\"click\"> Attribute <img src=\"arrow1.png\" class=\"click\"></th></tr>";
+	echo "<tr><th onclick=\"sortTable(0)\" class=\"click\"> Word <img src=\"arrow1.png\" class=\"click\"></th><th> Pronunciation 1 </th><th> Pronunciation 2 </th><th> Sentence </th><th onclick=\"sortTable(4)\" class=\"click\"> Category <img src=\"arrow1.png\" class=\"click\"></th></tr>";
 	for($idx=0;$idx < count($result);$idx++) {
 		$row = $result[$idx];
 		
