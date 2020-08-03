@@ -50,8 +50,8 @@
 						</div>
 					</p>
 				
-					<div class=\"rectangle centered\"> 
-						<input type=\"submit\" class=\"rounded\">  
+					<div>
+						<input type=\"submit\">
 					</div>
 			
 				</fieldset>

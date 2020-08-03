@@ -35,11 +35,11 @@
 					</p>
 		
 					<p>
-						<input type=\"text\" name=\"ans\" size=\"80\">
+						<input type=\"text\" name=\"ans\" autocomplete=\"off\" size=\"20\" style=\"font-size:18pt; text-align:center\">
 					</p>
 				
-					<div class=\"rectangle centered\"> 
-						<input type=\"submit\" class=\"rounded\">  
+					<div>
+						<input type=\"submit\">
 					</div>
 			
 				</fieldset>
